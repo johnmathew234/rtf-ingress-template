@@ -1,4 +1,4 @@
-apiVersion: networking.k8s.io/v1
+apiVersion: networking.k8s.io/v1beta1
 kind: Ingress
 metadata:
   name: example-rtf-ingress
@@ -16,10 +16,9 @@ spec:
   - host: apiopsrtf.eastus.cloudapp.gke.com
     http:
       paths: 
-      - pathType: Prefix
-        path: /
+      - path: /*
         backend: 
           service:
             name: example-rtf-ingress
             port:
-              name: 8080
+              name: 80
