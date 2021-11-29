@@ -8,12 +8,12 @@ metadata:
     environment: environment-id
 spec:
   ingressClassName: rtf-nginx 
-  tls: 
-  - hosts:
-      - apiopsrtf.eastus.cloudapp.azure.com
-    secretName: example-tls
+  #tls: 
+  #- hosts:
+   #   - apiopsrtf.eastus.cloudapp.azure.com
+   # secretName: example-tls
   rules:
-  - host: apiopsrtf.eastus.cloudapp.azure.com
+  - host: apiopsrtf.istika.com
     http:
       paths: 
       - pathType: Prefix
