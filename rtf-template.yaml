@@ -18,7 +18,5 @@ spec:
       paths: 
       - path: /*
         backend: 
-          service:
-            name: example-rtf-ingress
-            port:
-              name: 80
+          serviceName: example-rtf-ingress
+          servicePort: 80
