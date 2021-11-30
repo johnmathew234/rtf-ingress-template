@@ -25,4 +25,4 @@ spec:
           service:
             name: service-name
             port:
-              name: 80%
+              name: service-port
