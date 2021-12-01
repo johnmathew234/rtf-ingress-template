@@ -28,7 +28,7 @@ spec:
         env:
           - name: TLS_CERT
             value: /etc/tls/my-mule-gke-tls.key
-        volumes:
-        -  name: tls
+      volumes:
+       -  name: tls
            secret:
              secretName: my-mule-gke-tls
