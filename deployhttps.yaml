@@ -17,8 +17,9 @@ spec:
         app: hello
     spec:
       containers:
-      - name: hello-kubernetes
-        image: paulbouwer/hello-kubernetes:1.5
+      - name: hello-app
+        image: ger.io/google-samples/hello-app-tls:1.0
+        imagePullPolicy: Always
         ports:
         - containerPort: 8443
         volumeMounts:
@@ -27,6 +28,8 @@ spec:
              readOnly: true
         env:
           - name: TLS_CERT
+            value: /etc/tls/my-mule-gke-tls.crt
+          - name: TLS_KEY
             value: /etc/tls/my-mule-gke-tls.key
       volumes:
        -  name: tls
