@@ -11,7 +11,7 @@ spec:
   selector:
     app: hello
   ports:
-    - name: my-mule-gke tls
+    - name: my-mule-gke-tls
       port: 443
       targetPort: 8443
   
