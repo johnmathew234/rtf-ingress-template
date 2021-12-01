@@ -1,0 +1,19 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: my-mule-gke
+  labels:
+   app: hello
+  annotations:
+     kubernetes.io/ingress.allow-http: "false"
+     kubernetes.io/ingress.global-static-ip-name: my-mule-gke-ip
+spec:
+  tls:
+   - hosts:
+     -  "my-mule-gke.com"
+     secretName: my-mule-gke-tls
+  backend:
+    serviceName: my-mule-gke
+    servicePort: 443
+  
+  

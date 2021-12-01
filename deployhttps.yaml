@@ -1,0 +1,34 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-mule-gke
+  labels:
+    app: hello
+    business-group: business-group-id
+    environment: environment-id 
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: hello
+  template:
+    metadata:
+      labels:
+        app: hello
+    spec:
+      containers:
+      - name: hello-kubernetes
+        image: paulbouwer/hello-kubernetes:1.5
+        ports:
+        - containerPort: 8443
+        volumeMounts:
+           - name: tls
+             mountPath: /etc/tls
+             readOnly: true
+        env:
+          - name: TLS_CERT
+            value: /etc/tls/my-mule-gke-tls.key
+        volumes:
+        -  name: tls
+           secret:
+             secretName: my-mule-gke-tls
