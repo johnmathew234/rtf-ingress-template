@@ -26,6 +26,6 @@ spec:
         backend:
           service:
             name: service
-            port:
-              number: 80
+            port: service-port
+             
 
