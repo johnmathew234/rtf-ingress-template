@@ -1,27 +1,31 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: rtf-ingress-template
-  namespace: rtf 
-  labels:
-    business-group: business-group-id
-    environment: environment-id
+  name: rtf-ingress-https
+  namespace: rtf
   annotations:
-    nginx.ingress.kubernetes.io/rewrite-target: /\$2
-    nginx.ingress.kubernetes.io/ssl-redirect: \"true\"
+    nginx.ingress.kubernetes.io/rewrite-target: /$2
+    nginx.ingress.kubernetes.io/ssl-redirect: "true"
     nginx.ingress.kubernetes.io/configuration-snippet: |
-      rewrite ^/app-name(/|$)(.*) /\$2 break; 
+      rewrite ^/app-name(/|$)(.*) /$2 break;         
+  labels:
+    environment:  business-group-id
+    business-group: environment-id
 spec:
   ingressClassName: rtf-nginx
+  tls:
+  - hosts:
+      - rtf.mulesoft.com
+    secretName: demo-tls
   rules:
-  - host: demo.astellas.com
+  - host: rtf.mulesoft.com
     http:
-      paths: 
-      - pathType: ImplementationSpecific
+      paths:
+      - pathType: Prefix
         path: /app-name
-        backend: 
+        backend:
           service:
-            name: service-name
+            name: service
             port:
               number: 80
 ---
