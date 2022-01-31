@@ -71,7 +71,7 @@ spec:
         ]
         env:
         - name: ELASTICSEARCH_HOST
-          value: "astella-rtf-demo.kb.eu-west-1.aws.found.io"
+          value: "https://astella-rtf-demo.kb.eu-west-1.aws.found.io"
         - name: ELASTICSEARCH_PORT
           value: "9243"
         - name: ELASTICSEARCH_USERNAME
