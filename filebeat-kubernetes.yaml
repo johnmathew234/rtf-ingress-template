@@ -38,9 +38,9 @@ data:
     cloud.auth: ${ELASTIC_CLOUD_AUTH}
 
     output.elasticsearch:
-      hosts: ['astella-rtf-demo.kb.eu-west-1.aws.found.io:9243']
-      username: 'joji.varghese@njclabs.com'
-      password: 'Canadavisa25@'
+      hosts: ['${ELASTICSEARCH_HOST}:${ELASTICSEARCH_PORT}']
+      username: ${ELASTICSEARCH_USERNAME}
+      password: ${ELASTICSEARCH_PASSWORD}
 ---
 apiVersion: apps/v1
 kind: DaemonSet
@@ -71,13 +71,13 @@ spec:
         ]
         env:
         - name: ELASTICSEARCH_HOST
-          value: (elastic server address here-remove the braces)
+          value: "astella-rtf-demo.kb.eu-west-1.aws.found.io"
         - name: ELASTICSEARCH_PORT
           value: "9243"
         - name: ELASTICSEARCH_USERNAME
-          value: (elastic username here - remove the braces)
+          value: "joji.varghese@njclabs.com"
         - name: ELASTICSEARCH_PASSWORD
-          value: (elastic password here - remove the braces)
+          value: "Canadavisa25@"
         - name: ELASTIC_CLOUD_ID
           value:
         - name: ELASTIC_CLOUD_AUTH
