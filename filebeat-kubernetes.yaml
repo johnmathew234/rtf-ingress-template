@@ -38,7 +38,7 @@ data:
     cloud.auth: ${ELASTIC_CLOUD_AUTH}
 
     output.elasticsearch:
-      hosts: ['${ELASTICSEARCH_HOST:https://astella-rtf-demo.kb.eu-west-1.aws.found.io}:${ELASTICSEARCH_PORT:9243}']
+      hosts: ['${ELASTICSEARCH_HOST:http://178.128.46.2:${ELASTICSEARCH_PORT:9200}']
       username: ${ELASTICSEARCH_USERNAME}
       password: ${ELASTICSEARCH_PASSWORD}
 ---
@@ -71,15 +71,15 @@ spec:
         ]
         env:
         - name: ELASTICSEARCH_HOST
-          value: https://astella-rtf-demo.kb.eu-west-1.aws.found.io
+          value: http://178.128.46.2
         - name: ELASTICSEARCH_PORT
-          value: "9243"
+          value: "9200"
         - name: ELASTICSEARCH_USERNAME
-          value: elastic
+          value: rtfelk
         - name: ELASTICSEARCH_PASSWORD
-          value: wgYgKQ0jCLG50HMPn24d55ld
+          value: rtfelk
         - name: ELASTIC_CLOUD_ID
-          value: astella-rtf-demo:ZXUtd2VzdC0xLmF3cy5mb3VuZC5pbyQyOTY3MmMxMTA1ZjY0YjFmYTIyYjUyYmQwYWRjODYyYSQ4OTU4ODE4MzdkOGM0NTJhOTgyNzY4MmM0NGZhM2VhZQ==
+          value: 
         - name: ELASTIC_CLOUD_AUTH
           value:
         - name: NODE_NAME
