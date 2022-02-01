@@ -79,7 +79,7 @@ spec:
         - name: ELASTICSEARCH_PASSWORD
           value: wgYgKQ0jCLG50HMPn24d55ld
         - name: ELASTIC_CLOUD_ID
-          value:
+          value: astella-rtf-demo:ZXUtd2VzdC0xLmF3cy5mb3VuZC5pbyQyOTY3MmMxMTA1ZjY0YjFmYTIyYjUyYmQwYWRjODYyYSQ4OTU4ODE4MzdkOGM0NTJhOTgyNzY4MmM0NGZhM2VhZQ==
         - name: ELASTIC_CLOUD_AUTH
           value:
         - name: NODE_NAME
