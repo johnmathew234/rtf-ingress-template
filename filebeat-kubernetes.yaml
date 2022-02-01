@@ -75,7 +75,7 @@ spec:
         - name: ELASTICSEARCH_PORT
           value: "5601"
         - name: ELASTICSEARCH_USERNAME
-          value: rtfelk
+          value: elastic
         - name: ELASTICSEARCH_PASSWORD
           value: rtfelk
         - name: ELASTIC_CLOUD_ID
