@@ -38,7 +38,7 @@ data:
     cloud.auth: ${ELASTIC_CLOUD_AUTH}
 
     output.elasticsearch:
-      hosts: ['${ELASTICSEARCH_HOST:http://178.128.46.2:${ELASTICSEARCH_PORT:9200}']
+      hosts: ['${ELASTICSEARCH_HOST:http://178.128.46.2:${ELASTICSEARCH_PORT:5601}']
       username: ${ELASTICSEARCH_USERNAME}
       password: ${ELASTICSEARCH_PASSWORD}
 ---
@@ -73,7 +73,7 @@ spec:
         - name: ELASTICSEARCH_HOST
           value: http://178.128.46.2
         - name: ELASTICSEARCH_PORT
-          value: "9200"
+          value: "5601"
         - name: ELASTICSEARCH_USERNAME
           value: rtfelk
         - name: ELASTICSEARCH_PASSWORD
