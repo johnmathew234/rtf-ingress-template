@@ -37,10 +37,14 @@ data:
     cloud.id: ${ELASTIC_CLOUD_ID}
     cloud.auth: ${ELASTIC_CLOUD_AUTH}
 
-    output.elasticsearch:
-      hosts: ['${ELASTICSEARCH_HOST:http://178.128.46.2:${ELASTICSEARCH_PORT:5601}']
-      username: ${ELASTICSEARCH_USERNAME}
-      password: ${ELASTICSEARCH_PASSWORD}
+    #output.elasticsearch:
+      #hosts: ['${ELASTICSEARCH_HOST:http://178.128.46.2:${ELASTICSEARCH_PORT:5601}']
+      #username: ${ELASTICSEARCH_USERNAME}
+      #password: ${ELASTICSEARCH_PASSWORD}
+    output:
+        logstash:
+          hosts:
+          - 178.128.46.2:5044  
 ---
 apiVersion: apps/v1
 kind: DaemonSet
